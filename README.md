@@ -1,4 +1,4 @@
-## TOC
+## Table of Content
 
 - [Quick start](#quick-start)
 - [Tooling](#tooling)
@@ -37,7 +37,7 @@ Run the application in development mode with
 npm run dev
 ```
 
-> `ts-node-dev` will effectively restart node process on files change
+> `tsx watch` will effectively restart node process on files change
 
 Access
 
@@ -117,22 +117,22 @@ npm run lint
 
 ## Native TypeScript
 
-We can avoid cumbersome compiling step with intermediate artifacts and get native TypeScript execution for node.js with [ts-node](https://typestrong.org/ts-node/docs/performance)
+We can avoid cumbersome compiling step with intermediate artifacts and get native TypeScript execution for node.js with [tsx](https://github.com/privatenumber/tsx)
 
-With ts-node you can run any _.ts directly as you are running regular _.js script with node.
+With tsx you can run any _.ts directly as you are running regular _.js script with node.
 
 ```
-ts-node index.ts
+tsx index.ts
 ```
 
-It comes with a price of small performance overhead on first file read at runtime, so if this is a concern for your application in production you can use ts-node together with SWC (in order of magnitude faster TypeScript transpiler implemented in Rust) without typechecking.
+It comes with a price of small performance overhead on first file read at runtime, so if this is a concern for your application in production you can use tsx together with SWC (in order of magnitude faster TypeScript transpiler implemented in Rust) without typechecking.
 
 Path mapping
 Very handy [tsconfig-paths](https://github.com/dividab/tsconfig-paths) library
 allows to import modules from the filesystem without prefixing them with "./".
 
 Watch Mode
-We are going to use `ts-node-dev` to watch files and restart application on change, `ts-node-dev` is tweaked version of `node-dev` that uses `ts-node` under the hood. It restarts target node process but shares Typescript compilation process between restarts. This significantly increases speed of restarting comparing to `node-dev` or `nodemon`.
+We are going to use `tsx` to watch files and restart application on change, `tsx` is tweaked version of `node-dev` that uses `tsx` under the hood. It restarts target node process but shares Typescript compilation process between restarts. This significantly increases speed of restarting comparing to `node-dev` or `nodemon`.
 
 ## ESLint
 
